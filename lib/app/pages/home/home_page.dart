@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:fludemy/app/core/responsive/breakpoints.dart';
 import 'widgets/appbar/mobile_app_bar.dart';
 import 'widgets/appbar/web_app_bar.dart';
-import 'widgets/sections/advantages_section.dart';
-import 'widgets/sections/course_section.dart';
-import 'widgets/sections/top_section.dart';
+import 'widgets/sections//advantages_section/advantages_section.dart'; // Corrected path
+import 'widgets/sections/course_section.dart'; // Assume exists, adjust if needed
+import 'widgets/sections/top_section.dart'; // Assume exists, adjust if needed
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
                   child: WebAppBar(),
                 ),
           drawer: constraints.maxWidth < Breakpoints.mobileBreakpoint
-              ? const Drawer(
+              ?  Drawer(
                   child: ListView(
                     children: [
                       DrawerHeader(
@@ -42,22 +42,22 @@ class HomePage extends StatelessWidget {
             alignment: Alignment.topCenter,
             child: ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 1200),
-              child: ListView(
-                children: const [
-                  TopSection(), // Will update to CIMA banner
-                  AdvantagesSection(),
-                  CourseSection(), // Will update to ADR courses
+              child: ListView( // Removed const
+                children: [ // Removed const
+                  const TopSection(), // Assume const constructor exists
+                  const AdvantagesSection(), // Should work with correct import
+                  const CourseSection(), // Assume const constructor exists
                   // New News Section
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.all(16),
                     child: Text('Latest News', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
                   ),
-                  ListView(
+                  ListView( // Removed const
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     children: [
-                      ListTile(title: Text('Maritime ADR Strategy'), subtitle: Text('New initiatives in Ghana.')),
-                      ListTile(title: Text('Partnership Update'), subtitle: Text('Collaboration with fusion centers.')),
+                      const ListTile(title: Text('Maritime ADR Strategy'), subtitle: Text('New initiatives in Ghana.')),
+                      const ListTile(title: Text('Partnership Update'), subtitle: Text('Collaboration with fusion centers.')),
                     ],
                   ),
                 ],
