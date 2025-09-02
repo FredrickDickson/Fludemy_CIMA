@@ -26,10 +26,10 @@ class HomePage extends StatelessWidget {
           drawer: constraints.maxWidth < Breakpoints.mobileBreakpoint
               ?  Drawer(
                   child: ListView(
-                    children: [
+                    children: const [
                       DrawerHeader(
-                        child: Text('CIMA Menu', style: TextStyle(color: Colors.white)),
                         decoration: BoxDecoration(color: Color(0xFF001F3F)),
+                        child: Text('CIMA Menu', style: TextStyle(color: Colors.white)),
                       ),
                       ListTile(title: Text('Membership'), onTap: null),
                       ListTile(title: Text('Qualifications'), onTap: null),
@@ -55,9 +55,9 @@ class HomePage extends StatelessWidget {
                   ListView( // Removed const
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    children: [
-                      const ListTile(title: Text('Maritime ADR Strategy'), subtitle: Text('New initiatives in Ghana.')),
-                      const ListTile(title: Text('Partnership Update'), subtitle: Text('Collaboration with fusion centers.')),
+                    children: const [
+                      ListTile(title: Text('Maritime ADR Strategy'), subtitle: Text('New initiatives in Ghana.')),
+                      ListTile(title: Text('Partnership Update'), subtitle: Text('Collaboration with fusion centers.')),
                     ],
                   ),
                 ],

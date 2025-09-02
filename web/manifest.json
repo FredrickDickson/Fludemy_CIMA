@@ -1,23 +1,23 @@
 {
-    "name": "fludemy",
-    "short_name": "fludemy",
+    "name": "CIMA ADR Platform",
+    "short_name": "CIMA",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "FLUdemy",
+    "background_color": "#001F3F", 
+    "theme_color": "#001F3F", 
+    "description": "Center for International Mediators and Arbitrators - ADR Training",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
-        {
-            "src": "icons/fu.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "icons/fu.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
+      {
+        "src": "assets/cima_logo.png", 
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "assets/cima_logo.png", 
+        "sizes": "512x512",
+        "type": "image/png"
+      }
     ]
-}
+  }

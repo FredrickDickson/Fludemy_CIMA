@@ -3,19 +3,19 @@ import 'tokens/app_colors.dart';
 
 class AppThemes {
   static final primary = ThemeData(
-    primarySwatch: MaterialColor(
+    primarySwatch: const MaterialColor(
       0xFF001F3F, // Navy blue
       <int, Color>{
-        50: const Color(0xFFE6F0FA),
-        100: const Color(0xFFB3CDE6),
-        200: const Color(0xFF80AED3),
-        300: const Color(0xFF4D8FC0),
-        400: const Color(0xFF1A70AD),
-        500: const Color(0xFF001F3F),
-        600: const Color(0xFF001A36),
-        700: const Color(0xFF00152D),
-        800: const Color(0xFF001024),
-        900: const Color(0xFF000A1A),
+        50: Color(0xFFE6F0FA),
+        100: Color(0xFFB3CDE6),
+        200: Color(0xFF80AED3),
+        300: Color(0xFF4D8FC0),
+        400: Color(0xFF1A70AD),
+        500: Color(0xFF001F3F),
+        600: Color(0xFF001A36),
+        700: Color(0xFF00152D),
+        800: Color(0xFF001024),
+        900: Color(0xFF000A1A),
       },
     ),
     scaffoldBackgroundColor: Colors.white, // White background
