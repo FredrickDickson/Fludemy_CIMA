@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fludemy/app/core/responsive/breakpoints.dart';
-import 'widgets/appbar/mobile_app_bar.dart';
-import 'widgets/appbar/web_app_bar.dart';
-import 'widgets/sections//advantages_section/advantages_section.dart'; // Corrected path
-import 'widgets/sections/course_section.dart'; // Assume exists, adjust if needed
-import 'widgets/sections/top_section.dart'; // Assume exists, adjust if needed
+import '../../widgets/appbar/mobile_app_bar.dart';
+import '../../widgets/appbar/web_app_bar.dart';
+import '../../widgets/sections/advantages_section.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -24,12 +22,12 @@ class HomePage extends StatelessWidget {
                   child: WebAppBar(),
                 ),
           drawer: constraints.maxWidth < Breakpoints.mobileBreakpoint
-              ?  Drawer(
+              ? const Drawer(
                   child: ListView(
-                    children: const [
+                    children: [
                       DrawerHeader(
-                        decoration: BoxDecoration(color: Color(0xFF001F3F)),
                         child: Text('CIMA Menu', style: TextStyle(color: Colors.white)),
+                        decoration: BoxDecoration(color: Color(0xFF001F3F)),
                       ),
                       ListTile(title: Text('Membership'), onTap: null),
                       ListTile(title: Text('Qualifications'), onTap: null),
@@ -42,17 +40,51 @@ class HomePage extends StatelessWidget {
             alignment: Alignment.topCenter,
             child: ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 1200),
-              child: ListView( // Removed const
-                children: [ // Removed const
-                  const TopSection(), // Assume const constructor exists
-                  const AdvantagesSection(), // Should work with correct import
-                  const CourseSection(), // Assume const constructor exists
-                  // New News Section
+              child: ListView(
+                children: [
+                  Container(
+                    color: const Color(0xFF001F3F),
+                    padding: const EdgeInsets.all(16),
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          'assets/cima_logo.png',
+                          height: 80,
+                          fit: BoxFit.contain,
+                          errorBuilder: (context, error, stackTrace) =>
+                              const Text('CIMA', style: TextStyle(color: Colors.white, fontSize: 32)),
+                        ),
+                        const Text(
+                          'Center for International Mediators and Arbitrators',
+                          style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const AdvantagesSection(),
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('Qualification Pathways', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                        ListView(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          children: const [
+                            ListTile(title: Text('International Arbitration'), subtitle: Text('Certification course.')),
+                            ListTile(title: Text('Mediation Training'), subtitle: Text('Skill-building pathway.')),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                   const Padding(
                     padding: EdgeInsets.all(16),
                     child: Text('Latest News', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
                   ),
-                  ListView( // Removed const
+                  ListView(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
                     children: const [
