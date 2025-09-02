@@ -2,15 +2,20 @@ import 'package:flutter/material.dart';
 
 // Get color name from: https://www.color-name.com/hex/
 class AppColors {
-  static const lotion = Color(0XFFFAFAFA);
-  static const cultured = Color(0XFFF5F5F5);
-  static const grayX11 = Color(0XFFBDBDBD);
-  static const graniteGray = Color(0XFF616161);
+  static const lotion = Color(0xFFFAFAFA);
+  static const cultured = Color(0xFFF5F5F5);
+  static const grayX11 = Color(0xFFBDBDBD);
+  static const graniteGray = Color(0xFF616161);
   static const buttonBlue = Color(0xFF2196F3);
-  static const vampireBlack = Color(0XFF0A0A0A);
-  static const black87 = Color(0XDD000000);
-  static const sonicSilver = Color(0XFF757575);
-  static const white = Color(0XFFFFFFFF);
+  static const vampireBlack = Color(0xFF0A0A0A);
+  static const black87 = Color(0xDD000000);
+  static const sonicSilver = Color(0xFF757575);
+  static const white = Color(0xFFFFFFFF);
+
+  // CIMA colors
+  static const navy = Color(0xFF001F3F); // Primary
+  static const teal = Color(0xFF008080); // Accent
+  static const darkGray = Color(0xFF333333); // Text
 
   // Flutter Config for `Colors.blue` and use `AppColors.blue`
   static const int _bluePrimaryValue = 0xFF2196F3;
