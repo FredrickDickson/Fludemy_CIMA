@@ -1,69 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
   <base href="$FLUTTER_BASE_HREF">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">  
+  <meta name="description" content="Center for International Mediators and Arbitrators - Professional ADR Training">
+  <meta name="theme-color" content="#001F3F"> <!-- Navy blue -->
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="fludemy">
-  <link rel="apple-touch-icon" href="icons/fu.png">
+  <meta name="apple-mobile-web-app-title" content="CIMA ADR">
+  <link rel="apple-touch-icon" href="assets/cima_logo.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="assets/cima_logo.png"/>
 
-  <title>CIMA | Courses</title>
+  <title>CIMA ADR Platform</title>
   <link rel="manifest" href="manifest.json">
-</head>
-<body>
 
-<!--FIREBASE-->
-
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
-
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-      https://firebase.google.com/docs/web/setup#available-libraries -->
   <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
 
   <script>
-    // Your web app's Firebase configuration
     var firebaseConfig = {
       apiKey: "AIzaSyCBP7fDbih2jKZb9ORlZY1WBSL2ToBWCco",
-      authDomain: "fludemy.firebaseapp.com",
-      databaseURL: "https://fludemy-default-rtdb.firebaseio.com",
-      projectId: "fludemy",
-      storageBucket: "fludemy.appspot.com",
+      authDomain: "fludemy.firebaseapp.com", // Consider updating if creating a new CIMA project
+      databaseURL: "https://fludemy-default-rtdb.firebaseio.com", // Update if needed
+      projectId: "fludemy", // Update to a CIMA-specific project if desired
+      storageBucket: "fludemy.appspot.com", // Update if needed
       messagingSenderId: "446420961423",
       appId: "1:446420961423:web:6768bb51b582b3747548fa",
       measurementId: "G-76LGEHT7YW"
     };
-    // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
   </script>
 
-
-  <!-- This script installs service_worker.js to provide PWA functionality to
-       application. For more information, see:
-       https://developers.google.com/web/fundamentals/primers/service-workers -->
+  <!-- PWA Service Worker -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('flutter-first-frame', function () {
